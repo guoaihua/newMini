@@ -1,0 +1,16 @@
+<!--index.wxml-->
+<view class="container">
+
+    <view class="health">
+      <view> {{healthInfo.title}} </view>
+      <view>{{ healthInfo.context}}</view>
+    </view>
+
+    <view class="Weight-record">
+      <button class="toWeightRecord" bindtap="switchToWeightRecord">  体重记录 </button>
+    </view>
+
+    <view class="get-packet">
+      <button class="toPacket" bindtap="switchToPacket">  领红包 </button>
+    </view>
+</view>

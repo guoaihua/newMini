@@ -1,0 +1,5 @@
+<view class="container">
+  <view class="charts">
+  <canvas canvas-id="myCharts" id="myCharts" class="charts" bindtouchend="tap"/>
+</view>
+</view>
