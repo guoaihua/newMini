@@ -7,7 +7,9 @@ var uChartsInstance = {};
 Page({
   data: {
     cWidth: 750,
-    cHeight: 500
+    cHeight: 500,
+    currentWeight: 0,
+    showWeightModal: false
   },
   onReady() {
     //这里的第一个 750 对应 css .charts 的 width
@@ -106,8 +108,8 @@ Page({
         legend: {},
         xAxis: {
           disableGrid: true,
-          fontSize: 12,
-          lineHeight: 12
+          fontSize: 8,
+          lineHeight: 8
         },
         yAxis: {
           gridType: "dash",
@@ -132,5 +134,22 @@ Page({
   tap(e){
     uChartsInstance[e.target.id].touchLegend(e);
     uChartsInstance[e.target.id].showToolTip(e);
+  },
+  addWeight(){
+      this.setData({
+        showWeightModal: true
+      })
+    },
+  confirm(){
+    console.log(this.data);
+    this.setData({
+        showWeightModal: false
+      })
+  },
+  inputWeight(e){
+    console.log(e.detail.value);
+    this.setData({
+        inputWeight: parseInt(e.detail.value)
+    })
   }
 })

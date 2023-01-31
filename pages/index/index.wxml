@@ -2,12 +2,12 @@
 <view class="container">
     <image src="/imges/bg/banner.jpg"></image>
     <view class="health card">
-      <view> {{healthInfo.title}} </view>
-      <view>{{ healthInfo.context}}</view>
+      <view class="health-title"> {{healthInfo.title}} </view>
+      <view class="health-content">{{ healthInfo.context}}</view>
     </view>
 
-    <view class="Weight-record">
-      <button class="toWeightRecord" bindtap="switchToWeightRecord">  体重记录 </button>
+    <view class="weight-record">
+      <button class="toWeightRecord css-button-shadow-border-sliding--rose" bindtap="switchToWeightRecord">  体重记录 </button>
     </view>
 
     <view class="get-packet packetBtn">

@@ -1,5 +1,15 @@
 <view class="container">
   <view class="charts">
-  <canvas canvas-id="myCharts" id="myCharts" class="charts" bindtouchend="tap"/>
+    <canvas canvas-id="myCharts" id="myCharts" class="charts" bindtouchend="tap"/>
+  </view>
+  <button class="addWeight css-button-shadow-border-sliding--rose" bindtap="addWeight">增加</button>
+</view>
+
+<view class="weight-bg" wx:if="{{showWeightModal}}">
+    <view class="weight-record">
+    <view class="title"> 
+        今日体重: <input type="number" maxlength="5" bindinput="inputWeight"/> kg
+    </view>
+    <button class=" css-button-shadow-border-sliding--rose" bindtap="confirm"> 确定</button>
 </view>
 </view>
