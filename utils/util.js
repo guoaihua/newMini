@@ -1,3 +1,31 @@
+import moment from 'moment'
+moment.locale('zh-cn')
+
+const getCurrentTimeline = function(timeType){
+    let now = moment.now()
+    let resRange = [];
+    // 获取最近一周、7周、7个月
+    let step = 7;
+    if(timeType === 'days'){
+        for(let i = 1; i <= step; i++){
+            resRange.push(moment().subtract('days', step-i).format('MM-DD'))
+        }
+    }
+    if(timeType === 'weeks'){
+        for(let i = 1; i <= step; i++){
+            resRange.push(moment().subtract('weeks', step-i).format('MM-DD'))
+        }
+    }
+    if(timeType === 'months'){
+        for(let i = 1; i <= step; i++){
+            resRange.push(moment().subtract('months', step-i).format('MM-DD'))
+        }
+    }
+    return resRange
+}
+
+
+
 const formatTime = date => {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
@@ -35,5 +63,6 @@ module.exports = {
   formatTime,
   ele_take_out,
   mt_take_out,
-  ele_fruits_take_out
+  ele_fruits_take_out,
+  getCurrentTimeline
 }

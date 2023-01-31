@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
-
-    <view class="health">
+    <image src="/imges/bg/banner.jpg"></image>
+    <view class="health card">
       <view> {{healthInfo.title}} </view>
       <view>{{ healthInfo.context}}</view>
     </view>
@@ -10,7 +10,7 @@
       <button class="toWeightRecord" bindtap="switchToWeightRecord">  体重记录 </button>
     </view>
 
-    <view class="get-packet">
-      <button class="toPacket" bindtap="switchToPacket">  领红包 </button>
+    <view class="get-packet packetBtn">
+      <button class="toPacket  css-button-shadow-border-sliding--rose" bindtap="switchToPacket"> 领个外卖红包吧 </button>
     </view>
 </view>

@@ -1,8 +1,8 @@
 // pages/weight-record/weight-record.js
 import uCharts from '../../ucharts/u-charts.min';
-const moment = require('moment')
+import  { getCurrentTimeline }  from '../../utils/util'
 
-console.log(moment.format('YYYY-MM-DD'), moment.subtract('days',6).format('YYYY-MM-DD'))
+
 var uChartsInstance = {};
 Page({
   data: {
@@ -20,9 +20,41 @@ Page({
   getServerData() {
     //模拟从服务器获取数据时的延时
     setTimeout(() => {
+    const data = [
+        {
+            data: '2022-01-23',
+            weight: '60'
+        },
+        {
+            data: '2022-01-24',
+            weight: '61'
+        },
+        {
+            data: '2022-01-25',
+            weight: '62'
+        },
+        {
+            data: '2022-01-26',
+            weight: '61'
+        },
+        {
+            data: '2022-01-27',
+            weight: '62'
+        },
+        {
+            data: '2022-01-28',
+            weight: '61'
+        },
+        {
+            data: '2022-01-30',
+            weight: '62'
+        },
+    ]
+
+
       //模拟服务器返回数据，如果数据格式和标准格式不同，需自行按下面的格式拼接
       let res = {
-            categories: ["2018","2019","2020","2021","2022","2023"],
+            categories: data.map(i=>i.data),
             series: [
               {
                 name: "当前体重",
@@ -48,7 +80,7 @@ Page({
                     "#90F489"
                   ]
                 ],
-                data: [60,65,64,63,60,61]
+                data: data?.map(i=>i?.weight)
               },
             ]
           };
@@ -73,12 +105,13 @@ Page({
         enableScroll: false,
         legend: {},
         xAxis: {
-          disableGrid: true
+          disableGrid: true,
+          fontSize: 12,
+          lineHeight: 12
         },
         yAxis: {
           gridType: "dash",
           dashLength: 2,
-          splitNumber: 10,
           data: [
             {
               min: 60,
