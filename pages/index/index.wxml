@@ -2,15 +2,21 @@
 <view class="container">
     <image src="/imges/bg/banner.jpg"></image>
     <view class="health card">
-      <view class="health-title"> {{healthInfo.title}} </view>
-      <view class="health-content">{{ healthInfo.context}}</view>
+      <view class="health-title">健康小知识</view>
+      <view class="health-content">{{ healthInfo}}</view>
     </view>
 
     <view class="weight-record">
-      <button class="toWeightRecord css-button-shadow-border-sliding--rose" bindtap="switchToWeightRecord">  体重记录 </button>
+     <view class="title">
+          记录一下吧
+      </view>
+      <view class="toWeightRecord card" bindtap="switchToWeightRecord">  体重记录 </view>
     </view>
 
-    <view class="get-packet packetBtn">
-      <button class="toPacket  css-button-shadow-border-sliding--rose" bindtap="switchToPacket"> 领个外卖红包吧 </button>
+    <view class="get-packet packetBtn ">
+        <view class="title">
+            撸个羊毛
+        </view>
+      <view class="toPacket card" bindtap="switchToPacket"> 领个外卖红包吧 </view>
     </view>
 </view>
